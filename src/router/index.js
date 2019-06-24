@@ -3,10 +3,10 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Shipment from '@/components/Shipment'
 import Log from '@/components/Log'
-
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',

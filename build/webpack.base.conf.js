@@ -3,6 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const Dotenv = require('dotenv-webpack')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -19,6 +20,8 @@ const createLintingRule = () => ({
   }
 })
 
+
+
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
@@ -31,6 +34,11 @@ module.exports = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
+  plugins: [
+    new Dotenv({
+      path: './src/.env'
+    })
+  ],
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {

@@ -1,9 +1,9 @@
 import axios from 'axios'
 
 const HTTP = axios.create({
-  baseURL: 'https://api.simbachain.com/v1/yourAppApiName/',
+  baseURL: process.env.VUE_APP_SIMBA_APP_BASE_URL,
   headers: {
-    'APIKEY': 'yourAppApiKey'
+    'APIKEY': process.env.VUE_APP_SIMBA_API_KEY
   }
 })
 
