@@ -8,6 +8,35 @@
           </div>
 
           <div class="md-toolbar-section-end">
+            <span v-if="showSSO">
+              <md-button v-if="!$adal.isAuthenticated()" class="md-title" v-on:click="$adal.login()">
+                login
+              </md-button>
+              <md-menu v-else md-size="auto" md-direction="bottom-end">
+                <md-button class="md-icon-button" md-menu-trigger>
+                  <md-avatar class="md-avatar-icon md-small md-accent">
+                    <!-- Extract Initials for avatar -->
+                    {{ $adal.user.profile.name.split(" ").map((n)=>n[0]).join("") }}
+                  </md-avatar>
+                </md-button>
+
+                <md-menu-content>
+                  <md-menu-item>
+                    <span><strong>{{ $adal.user.profile.name }}</strong></span>
+                    <md-icon>account_circle</md-icon>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <span style="font-size: 12px"> {{ $adal.user.profile.unique_name }} </span>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <md-button class="md-button md-raised md-accent" v-if="$adal.isAuthenticated()"
+                               v-on:click="$adal.logout()">
+                      Logout
+                    </md-button>
+                  </md-menu-item>
+                </md-menu-content>
+              </md-menu>
+            </span>
             <span>
               <md-button class="md-icon-button" @click="showWallet(true)">
                 <span v-if="hasWallet">
@@ -175,7 +204,8 @@ export default {
     isCheck: false,
     hasWallet: false,
     createdWallet: false,
-    depositedWallet: false
+    depositedWallet: false,
+    showSSO: (process.env.VUE_APP_ADAL_SSO === 'true')
   }),
   methods: {
     setWalletStatus (status) {
