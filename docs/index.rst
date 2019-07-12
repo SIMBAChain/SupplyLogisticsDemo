@@ -1,5 +1,3 @@
-# -*- compile-command: make html -*-
-
 .. figure:: Simba-NS.png
 			:align: center
 
@@ -60,7 +58,7 @@ and an Ethereum wallet with Ether in it on the Circle of life network
 * Generate Application API Key(This is not the API name)
 * Generate Configuration API Key
 
-  ..figure:: Simba-NS.png
+  .. figure:: APIKey.png
 
  .. note:: Both application an application API key and a configuration
            API key is needed. These keys are not interchangable.
@@ -97,23 +95,23 @@ Setting up Microsoft Azure Active Directory for Single Sign-On
 1. Navigate to Azure Active Directory in the Azure Portal, and click
    on "App Registrations"
 
-   .. figure:: 1.png
+   .. figure:: 1.PNG
 
 2. Enter a name for your app, choose the allowed account types, and
    set the redirect URI (this will be the base url that the app is
    deployed to for this demo).
 
-   .. figure:: 2.png
+   .. figure:: 2.PNG
 
 3. Once the app is created, navigate to it, then click on
    Authentication. Tick both the Access tokens, and ID tokens box,
    then hit save.
 
-   .. figure:: 3.png
+   .. figure:: 3.PNG
 
 4. Click on overview to get the Client ID, Tenant ID
 
-   .. figure:: 4.png
+   .. figure:: 4.PNG
 
 .. _`Supply Logistics Demo Repository`:
    https://github.com/SIMBAChain/SupplyLogisticsDemo
