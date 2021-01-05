@@ -14,7 +14,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "b64-to-blob": "^1.2.19",
     "dotenv": "^8.0.0",
     "ethers": "^3.0.29",
