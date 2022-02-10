@@ -19,7 +19,7 @@
     "dotenv": "^8.0.0",
     "ethers": "^3.0.29",
     "file-saver": "^2.0.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "places.js": "^1.10.0",
     "sass-loader": "^7.0.3",
     "secure-ls": "^1.2.1",
